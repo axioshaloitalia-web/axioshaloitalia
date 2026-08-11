@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="AXIOS - Halo Italia Community">
+<title>AXIOS - Halo Italia Community</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap');
+:root{--white:#f4f7f5;--muted:#c4ccc8;--blue:#65c8ff;--bg:#050a11;--line:#1b2b38}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:"Barlow Condensed",Arial,sans-serif}a{color:inherit;text-decoration:none}
+.hero{height:620px;position:relative;overflow:hidden;background:#050a11}.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block}
+.top{position:absolute;z-index:2;top:0;left:0;right:0;padding:28px 42px;display:flex;justify-content:space-between;align-items:center}.brand{font:600 18px "Share Tech Mono";letter-spacing:.07em;text-shadow:0 2px 12px #000}.brand span{color:var(--blue)}.nav{display:flex;gap:30px;font:10px "Share Tech Mono";letter-spacing:.1em;text-shadow:0 2px 12px #000}.nav a:hover{color:var(--blue)}
+.hero-copy{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-42%);text-align:center;width:min(900px,90%);text-shadow:0 3px 22px #000}.kicker{font:10px "Share Tech Mono";letter-spacing:.28em;color:#e8eeeb;margin-bottom:16px}h1{margin:0;font-size:clamp(58px,9vw,118px);line-height:.78;letter-spacing:.11em;font-weight:700}.hero-copy .sub{margin-top:17px;color:var(--blue);font:clamp(14px,2vw,22px) "Share Tech Mono";letter-spacing:.28em}
+.intro{padding:48px 24px 44px;text-align:center;background:#060d15;border-top:1px solid rgba(101,200,255,.12);border-bottom:1px solid rgba(101,200,255,.12)}
+.intro .intro-kicker{font:10px "Share Tech Mono";letter-spacing:.28em;color:var(--blue);margin-bottom:14px}
+.intro h2{margin:0;font-size:clamp(30px,4vw,48px);font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+.intro p{max-width:680px;margin:12px auto 0;color:var(--muted);font-size:18px;line-height:1.4}
+.section{max-width:1060px;margin:auto;padding:58px 24px}.section-title{text-align:center;font:10px "Share Tech Mono";letter-spacing:.22em;color:var(--blue);margin-bottom:28px}
+.socials{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:920px;margin:auto}
+.social{position:relative;display:flex;align-items:center;justify-content:space-between;padding:20px 22px;background:linear-gradient(135deg,#0a151f,#071019);border:1px solid #1e3443;min-height:68px;font:12px "Share Tech Mono";letter-spacing:.1em;color:#e7eef1;transition:.22s}
+.social:after{content:"↗";font-size:15px;color:#5b7a8d;transition:.22s}
+.social:hover{border-color:var(--blue);background:#0b1924;transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.social:hover:after{color:var(--blue);transform:translate(2px,-2px)}
+.social.youtube{border-left:3px solid #ff3048}.social.instagram{border-left:3px solid #d85ca3}.social.tiktok{border-left:3px solid #4ce4df}.social.discord{border-left:3px solid #7289da}
+.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.video{background:#071019;border:1px solid #263a49;overflow:hidden;transition:.2s}.video:hover{border-color:var(--blue);transform:translateY(-2px)}.thumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#0b1520}.video-info{padding:14px}.video-title{font-size:18px;line-height:1.05}.video-date{margin-top:7px;color:#71828e;font:9px "Share Tech Mono";text-transform:uppercase}.video-status{grid-column:1/-1;text-align:center;color:#71828e;font:10px "Share Tech Mono";padding:15px}
+.contact{text-align:center;border-top:1px solid var(--line)}.email{display:inline-block;margin-top:12px;color:var(--blue);font:20px "Share Tech Mono"}.email:hover{text-decoration:underline}
+.footer{padding:24px;text-align:center;border-top:1px solid #162532;color:#687a87;font:9px "Share Tech Mono";letter-spacing:.1em}
+@media(max-width:800px){.hero{height:480px}.top{padding:20px}.brand{font-size:14px}.nav{gap:15px;font-size:8px}.videos{grid-template-columns:1fr}.section{padding:48px 18px}.socials{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.nav{display:none}.hero{height:400px}h1{font-size:53px}.hero-copy .sub{font-size:13px;letter-spacing:.18em}.socials{grid-template-columns:1fr}.social{min-height:60px}}
+</style>
+</head>
+<body>
+<section class="hero" id="top">
+<img src="assets/hero.jpg" alt="Halo landscape">
+<div class="top">
+<a class="brand" href="#top">AXIOS <span>- Halo Italia Community</span></a>
+<nav class="nav"><a href="#social">SOCIAL</a><a href="#video">VIDEO</a><a href="#contact">CONTATTI</a></nav>
+</div>
+<div class="hero-copy">
+<div class="kicker">AX-HI // ITALIAN COMMUNITY</div>
+<h1>AXIOS</h1>
+<div class="sub">HALO ITALIA</div>
+</div>
+</section>
+
+<section class="intro">
+<div class="intro-kicker">AX-HI // ITALIAN HALO COMMUNITY</div>
+<h2>La community italiana di Halo</h2>
+<p>Lore, news, eventi e contenuti per tutti gli appassionati dell'universo di Halo.</p>
+</section>
+
+<section class="section" id="video">
+<div class="section-title">ULTIMI VIDEO</div>
+<div class="videos" id="latest-videos"><div class="video-status">CARICAMENTO DEGLI ULTIMI VIDEO...</div></div>
+</section>
+
+<section class="section" id="social">
+<div class="section-title">SOCIAL</div>
+<div class="socials">
+<a class="social" href="https://www.youtube.com/@axioshaloitalia" target="_blank" rel="noopener noreferrer">YOUTUBE</a>
+<a class="social" href="https://www.instagram.com/axios_halo_italia/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+<a class="social" href="https://www.tiktok.com/@axios_halo_italia" target="_blank" rel="noopener noreferrer">TIKTOK</a>
+<a class="social" href="https://discord.com/channels/1517452684196712470/1517452685043957881" target="_blank" rel="noopener noreferrer">DISCORD</a>
+</div>
+</section>
+
+<section class="section contact" id="contact">
+<div class="section-title">CONTATTI COMMERCIALI</div>
+<div>Collaborazioni, sponsorizzazioni e richieste commerciali</div>
+<a class="email" href="mailto:axios@haloitalia.it">axios@haloitalia.it</a>
+</section>
+
+<footer class="footer">AXIOS - HALO ITALIA COMMUNITY • COMMUNITY INDIPENDENTE</footer>
+
+<script>
+/*
+  AUTOMATIC YOUTUBE UPDATES
+  Channel ID: UC0OTPfCWKwQd-2mrtAITROw
+  YouTube's public channel feed is used through a lightweight RSS-to-JSON bridge.
+  The page loads the 3 most recent uploads and checks again every 15 minutes.
+*/
+const CHANNEL_ID = "UC0OTPfCWKwQd-2mrtAITROw";
+const FEED = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+const PROXY = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(FEED)}`;
+const container = document.getElementById("latest-videos");
+
+function escapeHtml(value){
+  return String(value ?? "").replace(/[&<>"']/g, ch => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[ch]));
+}
+
+function renderVideos(items){
+  const videos = (items || []).slice(0,3);
+  if(!videos.length){
+    container.innerHTML = '<div class="video-status">NESSUN VIDEO DISPONIBILE AL MOMENTO.</div>';
+    return;
+  }
+  container.innerHTML = videos.map(v => {
+    const id = v.guid ? v.guid.split(":").pop() : "";
+    const thumb = v.thumbnail || `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+    const title = escapeHtml(v.title || "Video YouTube");
+    const date = v.pubDate ? new Date(v.pubDate).toLocaleDateString("it-IT") : "";
+    return `<a class="video" href="${escapeHtml(v.link)}" target="_blank" rel="noopener">
+      <img class="thumb" src="${escapeHtml(thumb)}" alt="${title}" loading="lazy">
+      <div class="video-info">
+        <div class="video-title">${title}</div>
+        <div class="video-date">${date}</div>
+      </div>
+    </a>`;
+  }).join("");
+}
+
+async function loadVideos(){
+  try{
+    const response = await fetch(PROXY, {cache:"no-store"});
+    if(!response.ok) throw new Error("Feed non disponibile");
+    const data = await response.json();
+    if(data.status !== "ok") throw new Error("RSS non disponibile");
+    renderVideos(data.items);
+  }catch(error){
+    container.innerHTML = `<div class="video-status">IMPOSSIBILE CARICARE I VIDEO IN QUESTO MOMENTO. <a href="https://www.youtube.com/@axioshaloitalia" target="_blank" style="color:#65c8ff">VEDI IL CANALE →</a></div>`;
+  }
+}
+loadVideos();
+setInterval(loadVideos, 15 * 60 * 1000);
+</script>
+</body>
+</html>
