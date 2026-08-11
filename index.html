@@ -1,231 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Axios Halo Italia — community italiana dedicata all'universo di Halo.">
-<title>AXIOS HALO ITALIA</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Axios Halo Italia — community italiana dedicata a Halo.">
+<title>AXIOS // HALO ITALIA</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap');
-
-:root{
-  --bg:#050a12;
-  --panel:#07101a;
-  --panel2:#0a1420;
-  --line:#25384b;
-  --blue:#42b9ff;
-  --blue-soft:#86cfff;
-  --text:#eef5f8;
-  --muted:#aab8c4;
-  --max:1240px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:"Barlow Condensed",Arial,sans-serif;
-}
-a{color:inherit;text-decoration:none}
-.header{
-  position:absolute;top:0;left:0;right:0;z-index:20;
-  height:92px;background:rgba(3,8,15,.92);
-  border-bottom:1px solid rgba(65,133,174,.28);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 42px;
-}
-.brand{display:flex;align-items:center;gap:15px}
-.brand-mark{
-  width:48px;height:54px;position:relative;display:grid;place-items:center;
-  border:1px solid rgba(116,174,212,.45);
-  clip-path:polygon(50% 0,100% 20%,88% 100%,12% 100%,0 20%);
-  color:#dfe9ed;font-weight:800;font-size:14px;
-}
-.brand-name{font-size:34px;letter-spacing:.22em;font-weight:700;line-height:.8}
-.brand-sub{font:13px "Share Tech Mono";letter-spacing:.3em;color:var(--blue);margin-top:8px}
-.nav{display:flex;align-items:center;gap:46px;font:14px "Share Tech Mono";letter-spacing:.08em}
-.nav a{height:92px;display:flex;align-items:center;position:relative;color:#eef4f7}
-.nav a:hover,.nav a.active{color:var(--blue)}
-.nav a.active:after{content:"";position:absolute;bottom:9px;left:0;right:0;height:2px;background:var(--blue);box-shadow:0 0 10px rgba(66,185,255,.5)}
-
-.hero{
-  position:relative;height:540px;overflow:hidden;background:#050a12;
-}
-.hero img{
-  width:100%;height:100%;display:block;object-fit:cover;object-position:center 50%;
-}
-.hero-bottom{
-  position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(66,185,255,.65);
-}
-.hero-title{
-  position:absolute;left:50%;bottom:30px;transform:translateX(-50%);
-  width:100%;text-align:center;z-index:3;
-  font-size:clamp(38px,6vw,76px);font-weight:800;line-height:.84;
-  letter-spacing:.1em;text-transform:uppercase;
-  text-shadow:0 3px 20px rgba(0,0,0,.9);
-}
-.hero-title small{
-  display:block;margin-bottom:11px;
-  font:11px "Share Tech Mono";letter-spacing:.25em;color:#dce9ee;
-}
-
-.intro{
-  background:
-    linear-gradient(90deg,transparent 0%,rgba(57,130,175,.09) 50%,transparent 100%),
-    var(--panel);
-  padding:42px 22px 34px;
-  border-bottom:1px solid var(--line);
-  text-align:center;
-}
-.tech-line{display:flex;align-items:center;gap:14px;max-width:1100px;margin:0 auto 17px}
-.tech-line:before,.tech-line:after{content:"";height:1px;background:var(--blue);opacity:.6;flex:1}
-.tech-line span{
-  font:12px "Share Tech Mono";letter-spacing:.19em;color:#f0f6f8;
-}
-.intro p{max-width:700px;margin:0 auto;color:#b8c5cf;font-size:18px;line-height:1.4}
-.cta{
-  display:inline-flex;margin-top:20px;border:1px solid var(--blue);color:var(--blue);
-  min-height:42px;padding:0 28px;align-items:center;
-  font:11px "Share Tech Mono";letter-spacing:.12em;
-}
-.cta:hover{background:rgba(66,185,255,.1);box-shadow:0 0 20px rgba(66,185,255,.12)}
-
-.content{max-width:var(--max);margin:auto;padding:0 22px 38px}
-.grid{
-  display:grid;grid-template-columns:1fr 1.18fr 1fr;
-  border-left:1px solid var(--line);border-right:1px solid var(--line);
-}
-.card{
-  min-height:260px;padding:27px 34px;border-right:1px solid var(--line);
-  background:var(--panel2);position:relative;
-}
-.card:last-child{border-right:0}
-.card h2{font-size:31px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 18px}
-.card p{font-size:17px;line-height:1.35;color:#aebbc5;margin:0 0 20px}
-.card .icon{font-size:28px;color:var(--blue);margin-bottom:10px}
-.card-btn{
-  display:inline-flex;border:1px solid #317ca8;color:#70c8f8;padding:11px 22px;
-  font:10px "Share Tech Mono";letter-spacing:.1em
-}
-.card-btn:hover{background:rgba(66,185,255,.08)}
-.socials{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:8px 0 19px}
-.social{
-  width:70px;height:70px;border:1px solid #29475d;background:#07101a;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
-  color:#d9e8ef
-}
-.social:hover{border-color:var(--blue);color:var(--blue)}
-.social b{font-size:24px;line-height:1}
-.social span{font:8px "Share Tech Mono";letter-spacing:.05em}
-.email{
-  display:block;color:var(--blue-soft);font:18px "Share Tech Mono";
-  word-break:break-word;margin:17px 0 22px
-}
-.email:hover{text-decoration:underline}
-.footer{
-  border-top:1px solid var(--line);min-height:100px;padding:0 42px;
-  display:flex;align-items:center;justify-content:space-between;
-  color:#667888;font:10px "Share Tech Mono";letter-spacing:.08em
-}
-.footer-brand{font-size:27px;font-weight:700;color:#637482;letter-spacing:.12em}
-.footer-right{text-align:right;color:#4385aa}
-
-@media(max-width:900px){
-  .header{padding:0 20px;height:74px}
-  .nav{gap:18px;font-size:10px}
-  .nav a{height:74px}
-  .brand-name{font-size:25px}.brand-sub{font-size:9px}.brand-mark{width:39px;height:44px}
-  .hero{height:430px}
-  .grid{grid-template-columns:1fr}
-  .card{border-right:0;border-bottom:1px solid var(--line)}
-  .card:last-child{border-bottom:0}
-}
-@media(max-width:600px){
-  .header{position:absolute}
-  .nav{display:none}
-  .hero{height:330px}
-  .hero-title{bottom:20px;font-size:40px;letter-spacing:.06em}
-  .hero-title small{font-size:8px}
-  .intro{padding:30px 16px}
-  .tech-line span{font-size:9px}
-  .content{padding:0 12px 25px}
-  .card{padding:24px 22px}
-  .footer{padding:20px;flex-direction:column;align-items:flex-start;gap:12px}
-  .footer-right{text-align:left}
-}
+:root{--bg:#040a12;--panel:#07111b;--line:#23394b;--blue:#42b9ff;--text:#eef5f8;--muted:#9eafbc;--max:1240px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"Barlow Condensed",Arial,sans-serif}a{color:inherit;text-decoration:none}
+.header{position:absolute;z-index:10;top:0;left:0;right:0;height:100px;padding:18px 42px;display:flex;align-items:center;justify-content:space-between;background:rgba(3,8,15,.82);border-bottom:1px solid rgba(66,185,255,.18)}
+.logo{width:220px;height:auto;display:block}.nav{display:flex;gap:44px;height:100%;align-items:center;font:12px "Share Tech Mono";letter-spacing:.08em}.nav a{height:100%;display:flex;align-items:center;position:relative}.nav a:hover{color:var(--blue)}.nav a.active{color:var(--blue)}.nav a.active:after{content:"";position:absolute;bottom:1px;left:0;right:0;height:2px;background:var(--blue)}
+.hero{height:540px;position:relative;overflow:hidden;background:#050a12}.hero img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 50%}.hero-title{position:absolute;z-index:2;left:50%;bottom:32px;transform:translateX(-50%);width:100%;text-align:center;text-shadow:0 3px 20px #000}.hero-title small{display:block;font:11px "Share Tech Mono";letter-spacing:.25em;margin-bottom:12px}.hero-title strong{display:block;font-size:clamp(42px,6vw,78px);line-height:.8;letter-spacing:.12em}.hero-title em{display:block;font-style:normal;color:var(--blue);font-size:clamp(18px,2.3vw,31px);letter-spacing:.42em;margin-top:9px}
+.intro{padding:40px 20px 34px;text-align:center;background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.tech{display:flex;max-width:1000px;margin:0 auto 18px;align-items:center;gap:15px}.tech:before,.tech:after{content:"";height:1px;background:var(--blue);opacity:.6;flex:1}.tech span{font:12px "Share Tech Mono";letter-spacing:.15em}.intro p{max-width:680px;margin:auto;color:var(--muted);font-size:18px;line-height:1.4}
+.main{max-width:var(--max);margin:auto;padding:0 20px 40px}.bottom-grid{display:grid;grid-template-columns:1.3fr 1fr;min-height:300px;border-left:1px solid var(--line);border-right:1px solid var(--line)}.block{padding:32px 40px;background:var(--panel);border-bottom:1px solid var(--line)}.block:first-child{border-right:1px solid var(--line)}.block-title{display:flex;align-items:center;gap:15px;margin-bottom:25px}.block-title:before,.block-title:after{content:"";height:1px;background:var(--blue);opacity:.6;flex:1}.block-title h2{margin:0;font:17px "Share Tech Mono";letter-spacing:.12em;color:var(--blue);white-space:nowrap}.socials{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}.social{width:92px;text-align:center}.social-box{height:92px;border:1px solid #27506a;background:#06101a;display:grid;place-items:center;transition:.2s}.social-box img{width:58px;height:58px;object-fit:contain}.social:hover .social-box{border-color:var(--blue);box-shadow:0 0 20px rgba(66,185,255,.12)}.social-label{display:block;margin-top:10px;font:10px "Share Tech Mono";letter-spacing:.06em}.contact{text-align:center}.mail-icon{width:48px;height:38px;margin:4px auto 20px;border:2px solid var(--blue);position:relative}.mail-icon:after,.mail-icon:before{content:"";position:absolute;top:7px;width:29px;height:2px;background:var(--blue)}.mail-icon:before{left:1px;transform:rotate(32deg)}.mail-icon:after{right:1px;transform:rotate(-32deg)}.email{display:block;color:#e9f4f8;font:21px "Share Tech Mono";margin:15px 0}.email:hover{color:var(--blue)}.contact p{color:var(--muted);font-size:15px;line-height:1.35;margin:0}
+.footer{min-height:85px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:18px;color:#687d8d;font:9px "Share Tech Mono";letter-spacing:.12em}.footer img{width:105px;opacity:.65}
+@media(max-width:850px){.header{height:78px;padding:12px 18px}.logo{width:175px}.nav{display:none}.hero{height:400px}.bottom-grid{grid-template-columns:1fr}.block:first-child{border-right:0;border-bottom:1px solid var(--line)}}
+@media(max-width:520px){.hero{height:315px}.hero-title{bottom:20px}.hero-title strong{font-size:39px}.hero-title em{font-size:17px;letter-spacing:.25em}.hero-title small{font-size:8px}.block{padding:27px 18px}.social{width:75px}.social-box{height:75px}.social-box img{width:48px;height:48px}}
 </style>
 </head>
 <body>
-
 <header class="header">
-  <a href="#top" class="brand" aria-label="Axios Halo Italia">
-    <div class="brand-mark">A</div>
-    <div>
-      <div class="brand-name">AXIOS</div>
-      <div class="brand-sub">HALO ITALIA</div>
-    </div>
-  </a>
-  <nav class="nav">
-    <a href="#community" class="active">COMMUNITY</a>
-    <a href="#social">SOCIAL</a>
-    <a href="#contact">CONTATTI COMMERCIALI</a>
-  </nav>
+<a href="#top"><img class="logo" src="assets/axios-logo.svg" alt="Axios Halo Italia"></a>
+<nav class="nav"><a class="active" href="#top">COMMUNITY</a><a href="#social">SOCIAL</a><a href="#contact">CONTATTI COMMERCIALI</a></nav>
 </header>
 
 <main id="top">
-  <section class="hero">
-    <img src="assets/hero.jpg" alt="Paesaggio ispirato all'universo di Halo">
-    <div class="hero-title">
-      <small>AX-HI // ITALIAN HALO COMMUNITY</small>
-      AXIOS HALO ITALIA
-    </div>
-    <div class="hero-bottom"></div>
-  </section>
+<section class="hero">
+<img src="assets/hero.jpg" alt="Halo landscape">
+<div class="hero-title"><small>AX-HI // ITALIAN COMMUNITY</small><strong>AXIOS</strong><em>HALO ITALIA</em></div>
+</section>
 
-  <section class="intro" id="community">
-    <div class="tech-line"><span>BENVENUTO IN AXIOS HALO ITALIA</span></div>
-    <p>Axios Halo Italia è la community italiana dedicata all'universo di Halo.<br>
-    Notizie, lore, eventi, discussioni e tanto altro per tutti gli appassionati.</p>
-    <a class="cta" href="#social">SCOPRI LA COMMUNITY</a>
-  </section>
+<section class="intro">
+<div class="tech"><span>BENVENUTO IN AXIOS HALO ITALIA</span></div>
+<p>La community italiana dedicata all'universo di Halo. Notizie, lore, eventi, discussioni e contenuti per tutti gli appassionati.</p>
+</section>
 
-  <section class="content">
-    <div class="grid">
-      <article class="card">
-        <div class="icon">◈</div>
-        <h2>Community</h2>
-        <p>Unisciti alla nostra community di Spartan. Condividi la tua passione, partecipa alle discussioni e rimani aggiornato sul mondo di Halo.</p>
-        <a class="card-btn" href="#social">ENTRA NELLA COMMUNITY</a>
-      </article>
+<section class="main">
+<div class="bottom-grid">
+<section class="block" id="social">
+<div class="block-title"><h2>SEGUICI SUI SOCIAL</h2></div>
+<div class="socials">
+<a class="social" href="#" target="_blank"><div class="social-box"><img src="assets/youtube.svg" alt="YouTube"></div><span class="social-label">YOUTUBE</span></a>
+<a class="social" href="#" target="_blank"><div class="social-box"><img src="assets/instagram.svg" alt="Instagram"></div><span class="social-label">INSTAGRAM</span></a>
+<a class="social" href="#" target="_blank"><div class="social-box"><img src="assets/tiktok.svg" alt="TikTok"></div><span class="social-label">TIKTOK</span></a>
+<a class="social" href="#" target="_blank"><div class="social-box"><img src="assets/discord.svg" alt="Discord"></div><span class="social-label">DISCORD</span></a>
+</div>
+</section>
 
-      <article class="card" id="social">
-        <div class="icon">◇</div>
-        <h2>Social</h2>
-        <div class="socials">
-          <!-- Sostituisci gli href con i tuoi link reali -->
-          <a class="social" href="#" aria-label="YouTube"><b>▶</b><span>YOUTUBE</span></a>
-          <a class="social" href="#" aria-label="Instagram"><b>◎</b><span>INSTAGRAM</span></a>
-          <a class="social" href="#" aria-label="TikTok"><b>♪</b><span>TIKTOK</span></a>
-          <a class="social" href="#" aria-label="Discord"><b>◉</b><span>DISCORD</span></a>
-        </div>
-        <a class="card-btn" href="#social">SEGUICI SUI SOCIAL</a>
-      </article>
-
-      <article class="card" id="contact">
-        <div class="icon">◇</div>
-        <h2>Contatti commerciali</h2>
-        <p>Per collaborazioni, sponsorizzazioni o richieste commerciali:</p>
-        <a class="email" href="mailto:axios@haloitalia.it">axios@haloitalia.it</a>
-        <a class="card-btn" href="mailto:axios@haloitalia.it">SCRIVI</a>
-      </article>
-    </div>
-  </section>
+<section class="block contact" id="contact">
+<div class="block-title"><h2>CONTATTI COMMERCIALI</h2></div>
+<div class="mail-icon" aria-hidden="true"></div>
+<p>Per collaborazioni, sponsorizzazioni<br>o richieste commerciali.</p>
+<a class="email" href="mailto:axios@haloitalia.it">axios@haloitalia.it</a>
+</section>
+</div>
+</section>
 </main>
 
 <footer class="footer">
-  <div class="footer-brand">AXIOS HALO ITALIA</div>
-  <div>COMMUNITY INDIPENDENTE</div>
-  <div class="footer-right">AXIOS HALO ITALIA<br>TUTTI I DIRITTI RISERVATI</div>
+<span>AXIOS HALO ITALIA</span><span>•</span><span>COMMUNITY INDIPENDENTE</span><span>•</span><span>TUTTI I DIRITTI RISERVATI</span>
 </footer>
-
 </body>
 </html>
